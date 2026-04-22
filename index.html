@@ -1,70 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página Profissional</title>
-    <style>
-        /* CSS Básico para visualização */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-        }
-        .botao {
-            display: inline-block;
-            background: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
+<style>
+  :root {
+    --verde-copa: #009739;
+    --amarelo-copa: #FEDD00;
+    --azul-copa: #012169;
+    --branco: #FFFFFF;
+  }
 
-    <header>
-        <h1>Bem-vindo ao Meu Projeto</h1>
-        <p>Desenvolvendo soluções criativas com HTML</p>
-    </header>
+  .form-container {
+    border-top: 8px solid var(--verde-copa);
+    background-color: var(--branco);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
 
-    <main>
-        <h2>Sobre o Projeto</h2>
-        <p>Este é um exemplo de estrutura HTML5. Note que usamos tags semânticas como <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> e <code>&lt;footer&gt;</code> para ajudar os motores de busca e leitores de tela a entenderem a página.</p>
-        
-        <h3>Principais Recursos</h3>
-        <ul>
-            <li>Design Responsivo</li>
-            <li>Código Limpo</li>
-            <li>Tags Semânticas</li>
-        </ul>
+  .question-title {
+    color: var(--azul-copa);
+    font-weight: bold;
+  }
 
-        <a href="#" class="botao" onclick="alert('Botão clicado!')">Clique Aqui</a>
-    </main>
+  .app-screenshot {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px solid #eee;
+  }
 
-    <footer>
-        <p>&copy; 2026 - Desenvolvido por Gemini</p>
-    </footer>
+  .btn-submit {
+    background-color: var(--verde-copa);
+    color: var(--amarelo-copa);
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
 
-</body>
-</html>
+  .btn-submit:hover {
+    background-color: var(--azul-copa);
+    cursor: pointer;
+  }
+</style>
