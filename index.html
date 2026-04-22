@@ -1,41 +1,175 @@
-<style>
-  :root {
-    --verde-copa: #009739;
-    --amarelo-copa: #FEDD00;
-    --azul-copa: #012169;
-    --branco: #FFFFFF;
-  }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback BikeShop - Clima de Copa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --verde-gramado: #009739;
+            --amarelo-ouro: #FEDD00;
+            --azul-selecao: #012169;
+            --cinza-fundo: #f0f2f5;
+            --branco: #ffffff;
+        }
 
-  .form-container {
-    border-top: 8px solid var(--verde-copa);
-    background-color: var(--branco);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  .question-title {
-    color: var(--azul-copa);
-    font-weight: bold;
-  }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cinza-fundo);
+            color: #333;
+            line-height: 1.6;
+        }
 
-  .app-screenshot {
-    width: 100%;
-    border-radius: 8px;
-    margin: 15px 0;
-    border: 2px solid #eee;
-  }
+        /* Cabeçalho Estilo Copa */
+        header {
+            background: linear-gradient(135deg, var(--verde-gramado) 0%, var(--azul-selecao) 100%);
+            color: var(--amarelo-ouro);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--amarelo-ouro);
+        }
 
-  .btn-submit {
-    background-color: var(--verde-copa);
-    color: var(--amarelo-copa);
-    font-weight: 800;
-    text-transform: uppercase;
-    transition: 0.3s;
-  }
+        header h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-  .btn-submit:hover {
-    background-color: var(--azul-copa);
-    cursor: pointer;
-  }
-</style>
+        /* Container Principal */
+        .container {
+            max-width: 600px;
+            margin: -30px auto 50px;
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Simulação de Imagens do App */
+        .app-preview {
+            width: 100%;
+            height: 250px;
+            background: #eee;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--azul-selecao);
+            overflow: hidden;
+        }
+
+        .app-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Aqui você coloca o print do seu app de bikes */
+        }
+
+        /* Estilização das Perguntas */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--azul-selecao);
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--verde-gramado);
+            outline: none;
+        }
+
+        /* Opções de Radio Estilizadas */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-option {
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .radio-option:hover {
+            background-color: #f9f9f9;
+            border-color: var(--amarelo-ouro);
+        }
+
+        /* Botão de Envio */
+        .btn-submit {
+            width: 100%;
+            background-color: var(--verde-gramado);
+            color: var(--branco);
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 0 #00702a;
+            transition: 0.1s;
+        }
+
+        .btn-submit:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        footer {
+            text-align: center;
+            padding-bottom: 30px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BikeShop na Copa ⚽🚲</h1>
+        <p>Ajude-nos a pedalar rumo ao título!</p>
+    </header>
+
+    <div class="container">
+        <form id="feedbackForm">
+            
+            <div class="form-group">
+                <label>Veja as novidades do nosso App:</label>
+                <div class="app-preview">
+                    <img src="https://images.unsplash.com/photo-1532298229144-0ee0c57515ec?auto=format&fit=crop&q=80&w=600" alt="Interface do App de Bicicletas">
+                </div>
+                <p style="font-size: 0.85rem; color: #666; margin-top: -10px;">Interface de seleção de Mountain Bikes - Edição Copa.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">Qual o seu nome, craque?</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Marcelo Paixão" required>
+            </div>
+
+            <div class="form-group">
+                <label>Você indicaria o aplicativo para outra pessoa?</label>
